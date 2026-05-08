@@ -16,7 +16,7 @@ Built with Vite + React + TypeScript + Tailwind, with motion via framer-motion a
 | Component         | Anchor       | What it shows                                   |
 |-------------------|--------------|-------------------------------------------------|
 | `Navbar`          | —            | Sticky nav, scroll-state, mobile drawer         |
-| `Hero`            | `#home`      | Fullscreen hero with looping cross-fade video   |
+| `Hero`            | `#home`      | Fullscreen hero with CSS-driven aurora backdrop |
 | `StartSection`    | `#services`  | "Where it begins" — 3-step process              |
 | `FeaturesChess`   | —            | 4-up chessboard layout of disciplines           |
 | `Work`            | `#work`      | Selected projects grid                          |
@@ -36,6 +36,6 @@ npm run preview  # preview the production build
 
 ## Notes
 
-- The hero video URL in `src/components/Hero.tsx` is an external CloudFront link kept from the original spec. Swap it for your own asset if it ever expires.
+- The hero uses a CSS-driven "aurora" gradient (no external assets), so it never breaks on deploy. Swap it for video by reverting `src/components/Hero.tsx` and adding a `<video>` source you control.
 - Imagery in `Work` / `Blog` uses Unsplash placeholders — replace with project assets before going live.
 - The HSL CSS variables in `src/styles/globals.css` are wired into Tailwind tokens, so theming the whole site is a one-file change.
